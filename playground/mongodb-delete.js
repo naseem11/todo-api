@@ -8,12 +8,12 @@ if(err){
 
 var db=client.db('TodoApp');
 
-db.collection('Todos').deleteMany({text:'Something to do'},(err,result)=>{
+db.collection('Todos').deleteMany({text:'Something to do'},(err,commandresult)=>{
 
 if(err){
     return console.log('Unable to delete', err);
 }
- console.log(result.result);
+ console.log(commandresult.result);
 });
  client.close();
 });
